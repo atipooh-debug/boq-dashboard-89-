@@ -6,910 +6,351 @@
 <title>สรุปงานเพิ่ม-ลด โครงการท่าแร้ง</title>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0D1B2A;
-    --navy2: #1A2E45;
-    --blue: #1565C0;
-    --blue-light: #1E88E5;
-    --sky: #E3F2FD;
-    --green: #1B5E20;
-    --green-light: #43A047;
-    --green-bg: #E8F5E9;
-    --red: #B71C1C;
-    --red-light: #E53935;
-    --red-bg: #FFEBEE;
-    --amber: #F57F17;
-    --amber-bg: #FFF8E1;
-    --gold: #F9A825;
-    --white: #FFFFFF;
-    --gray: #F5F7FA;
-    --text: #1A2E45;
-    --muted: #607D8B;
-    --border: #CFD8DC;
-  }
+:root {
+  --navy:#0D1B2A; --navy2:#1A2E45; --blue:#1565C0; --sky:#E3F2FD;
+  --green:#1B5E20; --gbg:#E8F5E9; --red:#B71C1C; --rbg:#FFEBEE;
+  --purple:#4527A0; --pbg:#EDE7F6; --text:#1A2E45; --muted:#607D8B; --border:#CFD8DC; --bg:#F0F4F8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'IBM Plex Sans Thai','Sarabun',sans-serif;background:var(--bg);color:var(--text);}
+.page{width:1200px;margin:0 auto;padding:28px 28px 40px;}
 
-  * { margin:0; padding:0; box-sizing:border-box; }
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#0D1B2A 0%,#1A2E45 55%,#1565C0 100%);border-radius:18px;padding:24px 32px;margin-bottom:16px;position:relative;overflow:hidden;}
+.hdr::after{content:'';position:absolute;right:-50px;top:-50px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.hdr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:100px;padding:3px 12px;font-size:10.5px;color:rgba(255,255,255,0.8);font-weight:600;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:10px;}
+.hdr-dot{width:6px;height:6px;border-radius:50%;background:#4FC3F7;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hdr h1{font-size:20px;font-weight:800;color:#fff;line-height:1.35;margin-bottom:4px;}
+.hdr-sub{font-size:11.5px;color:rgba(255,255,255,.55);}
+.hdr-meta{display:flex;gap:22px;margin-top:14px;flex-wrap:wrap;}
+.hdr-meta span{font-size:11.5px;color:rgba(255,255,255,.6);}
+.hdr-meta strong{color:#fff;}
 
-  body {
-    font-family: 'IBM Plex Sans Thai', 'Sarabun', sans-serif;
-    background: #F0F4F8;
-    color: var(--text);
-    min-height: 100vh;
-    padding: 0;
-  }
+/* LEVEL 1 */
+.L1{background:linear-gradient(135deg,#0D1B2A,#1B3A6B);border-radius:16px;padding:22px 28px;margin-bottom:16px;}
+.L1-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;margin-bottom:16px;}
+.L1-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.5);margin-bottom:5px;}
+.L1-val{font-size:34px;font-weight:800;color:#fff;line-height:1;}
+.L1-unit{font-size:14px;font-weight:400;color:rgba(255,255,255,.45);}
+.L1-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;}
+.L1-arrow{font-size:26px;color:rgba(255,255,255,.2);text-align:center;}
+.L1-right{text-align:right;}
+.L1-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(76,175,80,.2);border:1px solid rgba(76,175,80,.35);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:700;color:#A5D6A7;margin-top:6px;}
+.L1-bars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;}
+.L1-bar-label{font-size:10px;color:rgba(255,255,255,.5);margin-bottom:5px;display:flex;justify-content:space-between;}
+.L1-bar-label strong{color:rgba(255,255,255,.85);}
+.L1-bar-track{height:4px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden;}
+.L1-bar-fill{height:100%;border-radius:100px;}
 
-  /* ===== PAGE WRAPPER ===== */
-  .page {
-    width: 1200px;
-    margin: 0 auto;
-    padding: 32px 32px 40px;
-  }
+/* LEVEL 2 grid */
+.L2-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+.L2-card{background:#fff;border-radius:14px;border:1px solid var(--border);overflow:hidden;animation:fadeUp .45s ease both;}
+.L2-card:nth-child(1){animation-delay:.05s;}
+.L2-card:nth-child(2){animation-delay:.12s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.L2-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.L2-head-left{display:flex;align-items:center;gap:10px;}
+.L2-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.L2-title{font-size:13px;font-weight:700;color:var(--text);}
+.L2-desc{font-size:10.5px;color:var(--muted);margin-top:1px;}
+.L2-sum-val{font-size:18px;font-weight:800;line-height:1;text-align:right;}
+.L2-sum-sub{font-size:10px;color:var(--muted);margin-top:2px;text-align:right;}
+.L2-body{padding:16px 20px;}
 
-  /* ===== HEADER ===== */
-  .header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1565C0 100%);
-    border-radius: 20px;
-    padding: 28px 36px;
-    margin-bottom: 24px;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    right: -60px; top: -60px;
-    width: 280px; height: 280px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.04);
-  }
-  .header::after {
-    content: '';
-    position: absolute;
-    right: 60px; bottom: -40px;
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
-  }
-  .header-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 100px;
-    padding: 4px 14px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .header-dot { width:6px; height:6px; border-radius:50%; background:#4FC3F7; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .header h1 {
-    font-size: 22px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
-  .header-sub {
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.6);
-    font-weight: 300;
-  }
-  .header-meta {
-    display: flex;
-    gap: 24px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.7);
-  }
-  .meta-item span { color: #fff; font-weight: 600; }
+/* LEVEL 3 items */
+.L3-item{margin-bottom:12px;}
+.L3-item:last-child{margin-bottom:0;}
+.L3-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px;}
+.L3-name{font-size:11.5px;font-weight:600;color:var(--text);line-height:1.3;max-width:220px;}
+.L3-nums{text-align:right;font-size:10.5px;color:var(--muted);}
+.L3-nums strong{display:block;font-size:12px;color:var(--text);}
+.bar-track{height:6px;background:#EEF2F6;border-radius:100px;position:relative;overflow:hidden;}
+.bar-old{position:absolute;left:0;top:0;height:100%;background:#B0BEC5;border-radius:100px;}
+.bar-new{position:absolute;left:0;top:0;height:100%;border-radius:100px;opacity:.9;}
+.L3-diff{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:1px 7px;border-radius:100px;margin-top:4px;}
+.up{background:#E8F5E9;color:#2E7D32;}
+.down{background:#FFEBEE;color:#C62828;}
+.subtotal{display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;border-radius:8px;padding:8px 12px;margin-top:8px;}
+.subtotal-label{font-size:10.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;}
+.subtotal-val{font-size:14px;font-weight:800;}
 
-  /* ===== VERDICT BANNER ===== */
-  .verdict {
-    background: linear-gradient(135deg, #E65100, #FF6D00);
-    border-radius: 14px;
-    padding: 18px 28px;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    box-shadow: 0 4px 20px rgba(230,81,0,0.25);
-  }
-  .verdict-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .verdict-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.18);
-    display: flex; align-items:center; justify-content:center;
-    font-size: 22px;
-  }
-  .verdict-text h2 {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 2px;
-  }
-  .verdict-text p {
-    font-size: 11.5px;
-    color: rgba(255,255,255,0.65);
-  }
-  .verdict-amount {
-    text-align: right;
-  }
-  .verdict-amount .num {
-    font-size: 28px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1;
-  }
-  .verdict-amount .unit {
-    font-size: 12px;
-    color: rgba(255,255,255,0.7);
-    margin-top: 2px;
-  }
-  .verdict-amount .after-f {
-    font-size: 13px;
-    color: rgba(255,255,255,0.85);
-    font-weight: 600;
-    margin-top: 4px;
-  }
+/* hangar table */
+.htable{width:100%;border-collapse:collapse;}
+.htable th{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;padding:0 8px 8px;text-align:left;border-bottom:1px solid var(--border);}
+.htable th:not(:first-child){text-align:right;}
+.htable td{padding:7px 8px;font-size:11.5px;border-bottom:1px solid #F0F4F8;}
+.htable td:not(:first-child){text-align:right;}
+.htable tr:last-child td{border-bottom:none;font-weight:700;background:#F8FAFC;}
+.chip{display:inline-flex;align-items:center;gap:2px;padding:2px 7px;border-radius:100px;font-size:10px;font-weight:700;white-space:nowrap;}
 
-  /* ===== KPI ROW ===== */
-  .kpi-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  .kpi-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 18px 20px;
-    border: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-  .kpi-card .accent-line {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    border-radius: 4px 0 0 4px;
-  }
-  .kpi-label {
-    font-size: 11px;
-    color: var(--muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    margin-bottom: 8px;
-  }
-  .kpi-value {
-    font-size: 26px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .kpi-sub {
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .kpi-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 100px;
-    margin-top: 6px;
-  }
-  .badge-up { background: #E8F5E9; color: #2E7D32; }
-  .badge-down { background: #FFEBEE; color: #C62828; }
+/* LEVEL 4 outside BOQ */
+.L4-section{background:#fff;border-radius:14px;border:2px dashed #90A4AE;margin-bottom:16px;overflow:hidden;}
+.L4-head{background:linear-gradient(90deg,#37474F,#546E7A);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;}
+.L4-head-left{display:flex;align-items:center;gap:10px;}
+.L4-icon{width:32px;height:32px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.L4-head-title{font-size:13px;font-weight:700;color:#fff;}
+.L4-head-sub{font-size:10.5px;color:rgba(255,255,255,.6);margin-top:1px;}
+.L4-tag{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:4px 12px;font-size:10.5px;font-weight:700;color:#fff;flex-shrink:0;}
+.L4-body{padding:18px 22px;}
+.L4-row{display:grid;grid-template-columns:1fr auto auto auto;align-items:center;gap:20px;padding:12px 16px;border-radius:10px;background:#F8FAFC;border:1px solid #E0E7EE;}
+.L4-item-name{font-size:12px;font-weight:700;color:var(--text);}
+.L4-item-sub{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.5;}
+.L4-qty-box{text-align:center;}
+.L4-qty-val{font-size:18px;font-weight:800;color:var(--blue);}
+.L4-qty-unit{font-size:10px;color:var(--muted);}
+.L4-unit-box{text-align:right;}
+.L4-unit-val{font-size:12px;font-weight:600;color:#546E7A;}
+.L4-unit-sub{font-size:10px;color:var(--muted);}
+.L4-total-box{text-align:right;}
+.L4-total-val{font-size:18px;font-weight:800;color:#37474F;}
+.L4-total-sub{font-size:10px;color:var(--muted);}
+.L4-note{background:#FFF8E1;border:1px solid #FFE082;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:10.5px;color:#5D4037;line-height:1.6;}
 
-  /* ===== MAIN GRID ===== */
-  .main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 24px;
-  }
-
-  /* ===== SECTION CARD ===== */
-  .card {
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .card-header {
-    padding: 16px 22px 14px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .card-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .card-title .icon {
-    width: 28px; height: 28px;
-    border-radius: 8px;
-    display: flex; align-items:center; justify-content:center;
-    font-size: 14px;
-  }
-  .card-body { padding: 18px 22px; }
-
-  /* ===== COMPARISON BARS ===== */
-  .compare-item {
-    margin-bottom: 18px;
-  }
-  .compare-item:last-child { margin-bottom: 0; }
-  .compare-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 8px;
-  }
-  .compare-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text);
-    max-width: 200px;
-    line-height: 1.3;
-  }
-  .compare-nums {
-    text-align: right;
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .compare-nums strong { color: var(--text); font-size: 12px; }
-  .bar-track {
-    height: 8px;
-    background: #EEF2F6;
-    border-radius: 100px;
-    position: relative;
-    overflow: hidden;
-  }
-  .bar-boq {
-    position: absolute;
-    left: 0; top: 0; height: 100%;
-    background: #90CAF9;
-    border-radius: 100px;
-    transition: width 1s ease;
-  }
-  .bar-real {
-    position: absolute;
-    left: 0; top: 0; height: 100%;
-    border-radius: 100px;
-    transition: width 1s ease 0.2s;
-    opacity: 0.85;
-  }
-  .bar-legend {
-    display: flex;
-    gap: 12px;
-    margin-top: 6px;
-    font-size: 10px;
-    color: var(--muted);
-  }
-  .bar-legend span { display:flex; align-items:center; gap:4px; }
-  .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-
-  /* ===== ITEMS TABLE ===== */
-  .items-table { width:100%; border-collapse:collapse; }
-  .items-table th {
-    font-size: 10.5px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    padding: 0 10px 10px;
-    text-align: left;
-    border-bottom: 2px solid var(--border);
-  }
-  .items-table th:not(:first-child) { text-align: right; }
-  .items-table td {
-    padding: 10px 10px;
-    font-size: 12px;
-    border-bottom: 1px solid #F0F4F8;
-    vertical-align: middle;
-  }
-  .items-table td:not(:first-child) { text-align: right; }
-  .items-table tr:last-child td { border-bottom: none; }
-  .items-table .item-name {
-    font-weight: 600;
-    color: var(--text);
-    font-size: 12px;
-    line-height: 1.3;
-  }
-  .items-table .item-unit {
-    font-size: 10px;
-    color: var(--muted);
-    font-weight: 400;
-    margin-top: 1px;
-  }
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    padding: 2px 8px;
-    border-radius: 100px;
-    font-size: 10.5px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .chip-up { background: #E8F5E9; color: #2E7D32; }
-  .chip-down { background: #FFEBEE; color: #C62828; }
-  .chip-zero { background: #F3F4F6; color: #6B7280; }
-
-  /* ===== WAFFLE CHART AREA ===== */
-  .waffle-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 24px;
-  }
-
-  /* ===== FLOW DIAGRAM ===== */
-  .flow {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    padding: 20px 22px;
-  }
-  .flow-box {
-    flex: 1;
-    text-align: center;
-    padding: 14px 10px;
-    border-radius: 12px;
-  }
-  .flow-box .fb-label {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    margin-bottom: 6px;
-  }
-  .flow-box .fb-val {
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 2px;
-  }
-  .flow-box .fb-sub {
-    font-size: 10px;
-    opacity: 0.7;
-  }
-  .flow-box.green { background: var(--green-bg); }
-  .flow-box.green .fb-label { color: var(--green); }
-  .flow-box.green .fb-val { color: var(--green); }
-  .flow-box.red { background: var(--red-bg); }
-  .flow-box.red .fb-label { color: var(--red); }
-  .flow-box.red .fb-val { color: var(--red); }
-  .flow-box.amber { background: var(--amber-bg); }
-  .flow-box.amber .fb-label { color: var(--amber); }
-  .flow-box.amber .fb-val { color: var(--amber); }
-  .flow-box.blue { background: var(--sky); }
-  .flow-box.blue .fb-label { color: var(--blue); }
-  .flow-box.blue .fb-val { color: var(--blue); }
-  .flow-arrow {
-    font-size: 18px;
-    color: var(--border);
-    padding: 0 4px;
-    flex-shrink: 0;
-  }
-
-  /* ===== PROJECT TOTAL ===== */
-  .total-section {
-    background: linear-gradient(135deg, #0D1B2A 0%, #1A2E45 50%, #1B3A6B 100%);
-    border-radius: 18px;
-    padding: 24px 32px;
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-    align-items: center;
-    gap: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .total-section::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
-  }
-  .total-box {
-    text-align: center;
-    padding: 8px 16px;
-    position: relative;
-    z-index: 1;
-  }
-  .total-box .tb-label {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-    opacity: 0.65;
-    color: #fff;
-  }
-  .total-box .tb-val {
-    font-size: 28px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1;
-    margin-bottom: 3px;
-  }
-  .total-box .tb-sub {
-    font-size: 10.5px;
-    opacity: 0.6;
-    color: #fff;
-  }
-  .total-box.highlight .tb-val {
-    color: #FFD54F;
-    font-size: 34px;
-  }
-  .total-box.highlight .tb-label { color: #FFD54F; opacity: 0.9; }
-  .total-arrow {
-    font-size: 24px;
-    color: rgba(255,255,255,0.25);
-    text-align: center;
-    padding: 0 4px;
-    z-index: 1;
-    position: relative;
-  }
-  .total-divider {
-    width: 1px;
-    height: 60px;
-    background: rgba(255,255,255,0.12);
-    margin: 0 8px;
-    z-index: 1;
-    position: relative;
-  }
-  .total-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: rgba(76,175,80,0.2);
-    border: 1px solid rgba(76,175,80,0.4);
-    border-radius: 100px;
-    padding: 3px 10px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #A5D6A7;
-    margin-top: 6px;
-  }
-
-  /* ===== BOTTOM STRIP ===== */
-  .bottom-strip {
-    background: var(--navy);
-    border-radius: 14px;
-    padding: 18px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .strip-note {
-    font-size: 11.5px;
-    color: rgba(255,255,255,0.55);
-    max-width: 600px;
-    line-height: 1.6;
-  }
-  .strip-note strong { color: rgba(255,255,255,0.9); }
-  .strip-stamp {
-    text-align: right;
-    flex-shrink: 0;
-  }
-  .strip-stamp .stamp-label {
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 2px;
-  }
-  .strip-stamp .stamp-val {
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  /* ===== DONUT CHART ===== */
-  .donut-wrap {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 16px 22px;
-  }
-  .donut-svg { flex-shrink: 0; }
-  .donut-legend { flex: 1; }
-  .donut-leg-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-  .donut-leg-item:last-child { margin-bottom: 0; }
-  .leg-dot { width:10px; height:10px; border-radius:3px; flex-shrink:0; }
-  .leg-label { font-size: 11.5px; color: var(--text); flex: 1; font-weight: 500; }
-  .leg-pct { font-size: 12px; font-weight: 700; color: var(--text); }
-
-  /* animations */
-  @keyframes fadeUp {
-    from { opacity:0; transform:translateY(16px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
-  .kpi-card { animation: fadeUp 0.5s ease both; }
-  .kpi-card:nth-child(1) { animation-delay: 0.05s; }
-  .kpi-card:nth-child(2) { animation-delay: 0.12s; }
-  .kpi-card:nth-child(3) { animation-delay: 0.19s; }
-  .kpi-card:nth-child(4) { animation-delay: 0.26s; }
-
-  @media print {
-    body { background: white; }
-    .page { padding: 16px; }
-  }
+/* footer */
+.footer{background:var(--navy);border-radius:12px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.footer-note{font-size:11px;color:rgba(255,255,255,.5);line-height:1.7;}
+.footer-note strong{color:rgba(255,255,255,.85);}
+.fd-label{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);}
+.fd-val{font-size:13px;font-weight:700;color:#fff;margin-top:2px;}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-badge"><span class="header-dot"></span>สรุปงานเพิ่ม-ลด · หมวดผังบริเวณ</div>
-    <h1>โครงการก่อสร้างโรงเก็บอากาศยาน ลานจอดอากาศยาน และทางขับ<br>กองบินตำรวจ แขวงท่าแร้ง เขตบางเขน กรุงเทพมหานคร</h1>
-    <div class="header-sub">แบบรูปรายการเลขที่ 14233/68 · ประมาณการ ณ วันที่ 5 พฤศจิกายน 2568</div>
-    <div class="header-meta">
-      <div class="meta-item">📋 ราคากลางเดิม (ผังบริเวณ): <span>9,917,459 บาท</span></div>
-      <div class="meta-item">⚙️ Factor F งานก่อสร้าง: <span>1.2067</span></div>
-      <div class="meta-item">📐 Shop Drawing: <span>อนุมัติ 24 ก.พ. 2569</span></div>
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-badge"><span class="hdr-dot"></span>รายงานสรุปงานเพิ่ม-ลด</div>
+  <h1>โครงการก่อสร้างโรงเก็บอากาศยาน ลานจอดอากาศยาน และทางขับ<br>กองบินตำรวจ แขวงท่าแร้ง เขตบางเขน กรุงเทพมหานคร</h1>
+  <div class="hdr-sub">แบบรูปรายการเลขที่ 14233/68 · ประมาณการ ณ วันที่ 5 พฤศจิกายน 2568</div>
+  <div class="hdr-meta">
+    <span>📋 ราคากลางเดิม: <strong>89,457,064 บาท</strong></span>
+    <span>⚙️ Factor F: <strong>1.2067</strong></span>
+    <span>📐 Shop Drawing: <strong>อนุมัติ 24 ก.พ. 2569</strong></span>
+    <span>👤 ผู้เสนอ: <strong>กิจการร่วมค้า ท๊อปฟ์ เอทีอี</strong></span>
+  </div>
+</div>
+
+<!-- LEVEL 1: ยอดรวมโครงการ -->
+<div class="L1">
+  <div class="L1-top">
+    <div>
+      <div class="L1-label">ราคากลางเดิม (ทั้งโครงการ)</div>
+      <div class="L1-val">89.46 <span class="L1-unit">ล้านบาท</span></div>
+      <div class="L1-sub">หมวด ก. 84.04 + หมวด ข. 5.42 ล้านบาท</div>
+    </div>
+    <div class="L1-arrow">→</div>
+    <div class="L1-right">
+      <div class="L1-label">ราคากลางใหม่ (จากข้อมูลที่มีแล้ว · หลัง Factor F)</div>
+      <div class="L1-val" style="color:#FFD54F">90.74 <span class="L1-unit">ล้านบาท</span></div>
+      <div class="L1-sub">ปัดเศษพัน · ยังไม่รวมหมวดอื่นที่รอข้อมูล</div>
+      <div class="L1-badge">▲ +1.28 ล้าน (+1.44%)</div>
     </div>
   </div>
-
-  <!-- VERDICT BANNER -->
-  <div class="verdict">
-    <div class="verdict-left">
-      <div class="verdict-icon">📊</div>
-      <div class="verdict-text">
-        <h2>ผลสรุปหมวดผังบริเวณ: งานเพิ่มสุทธิ</h2>
-        <p>พื้น คสล. เพิ่มมาก แต่งานท่อระบายน้ำลดลง · ราคาก่อนคูณ Factor F</p>
-      </div>
+  <div class="L1-bars">
+    <div>
+      <div class="L1-bar-label"><span>ผังบริเวณ · ท่อระบายน้ำ</span><strong style="color:#EF9A9A">-0.56 ล้าน</strong></div>
+      <div class="L1-bar-track"><div class="L1-bar-fill" style="width:30%;background:#E53935"></div></div>
     </div>
-    <div class="verdict-amount">
-      <div class="num">+2,800,420</div>
-      <div class="unit">บาท (ก่อน Factor F)</div>
-      <div class="after-f">→ หลัง Factor F: <strong>+3,379,267 บาท</strong></div>
+    <div>
+      <div class="L1-bar-label"><span>โรงเก็บชั่วคราว หมายเลข 1</span><strong style="color:#A5D6A7">+1.85 ล้าน</strong></div>
+      <div class="L1-bar-track"><div class="L1-bar-fill" style="width:100%;background:#43A047"></div></div>
+    </div>
+    <div>
+      <div class="L1-bar-label"><span>หมวดอื่นๆ ในโครงการ</span><strong style="color:rgba(255,255,255,.3)">รอข้อมูล</strong></div>
+      <div class="L1-bar-track"><div class="L1-bar-fill" style="width:0%;background:#78909C"></div></div>
     </div>
   </div>
+</div>
 
-  <!-- KPI ROW -->
-  <div class="kpi-row">
-    <div class="kpi-card">
-      <div class="accent-line" style="background:#1E88E5"></div>
-      <div class="kpi-label">ราคากลางเดิม</div>
-      <div class="kpi-value" style="color:#1565C0">9.92 ล้าน</div>
-      <div class="kpi-sub">หมวดผังบริเวณ (ก่อน F)</div>
-      <div class="kpi-badge badge-up">📁 BOQ เดิม</div>
-    </div>
-    <div class="kpi-card">
-      <div class="accent-line" style="background:#43A047"></div>
-      <div class="kpi-label">งานเพิ่มสุทธิ (ก่อน F)</div>
-      <div class="kpi-value" style="color:#2E7D32">+2.80 ล้าน</div>
-      <div class="kpi-sub">พื้น คสล. เพิ่ม − ท่อลด</div>
-      <div class="kpi-badge badge-up">▲ +28.2%</div>
-    </div>
-    <div class="kpi-card">
-      <div class="accent-line" style="background:#E53935"></div>
-      <div class="kpi-label">งานเพิ่มสุทธิ (หลัง F)</div>
-      <div class="kpi-value" style="color:#C62828">+3.38 ล้าน</div>
-      <div class="kpi-sub">คูณ Factor F 1.2067 แล้ว</div>
-      <div class="kpi-badge badge-up">▲ รวมต้นทุนจริง</div>
-    </div>
-    <div class="kpi-card">
-      <div class="accent-line" style="background:#F9A825"></div>
-      <div class="kpi-label">ราคากลางใหม่ (หลัง F)</div>
-      <div class="kpi-value" style="color:#E65100">13.30 ล้าน</div>
-      <div class="kpi-sub">หมวดผังบริเวณ ปรับใหม่</div>
-      <div class="kpi-badge badge-up">✓ ปัดเศษพัน</div>
-    </div>
-  </div>
+<!-- LEVEL 2–3: หมวดงาน -->
+<div class="L2-grid">
 
-  <!-- MAIN GRID -->
-  <div class="main-grid">
-
-    <!-- LEFT: ตารางรายการ -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">
-          <div class="icon" style="background:#E3F2FD; font-size:15px">📋</div>
-          รายการงานเพิ่ม-ลดทั้งหมด
-        </div>
-        <span style="font-size:10.5px; color:var(--muted); font-weight:600">6 รายการ</span>
-      </div>
-      <div class="card-body" style="padding:14px 18px">
-        <table class="items-table">
-          <thead>
-            <tr>
-              <th>รายการ</th>
-              <th>เดิม</th>
-              <th>จริง</th>
-              <th>ผลต่าง (บาท)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="item-name">🏗️ พื้น คสล. จุดจอดเฮลิคอปเตอร์</div>
-                <div class="item-unit">5,160 → 9,580 ตร.ม. · 738.71 บาท/ตร.ม.</div>
-              </td>
-              <td style="color:var(--muted); font-size:11px">5,160<br><span style="font-size:10px">ตร.ม.</span></td>
-              <td style="font-weight:700; color:#1565C0">9,580<br><span style="font-size:10px; font-weight:400; color:var(--muted)">ตร.ม.</span></td>
-              <td><span class="chip chip-up">▲ +3,265,098</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="item-name">🔵 บ่อพัก คสล. ขนาด 0.60 ม.</div>
-                <div class="item-unit">21 → 35 บ่อ · 4,690 บาท/บ่อ</div>
-              </td>
-              <td style="color:var(--muted); font-size:11px">21<br><span style="font-size:10px">บ่อ</span></td>
-              <td style="font-weight:700; color:#1565C0">35<br><span style="font-size:10px; font-weight:400; color:var(--muted)">บ่อ</span></td>
-              <td><span class="chip chip-up">▲ +65,660</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="item-name">🔴 บ่อพัก คสล. ขนาด 1.00 ม.</div>
-                <div class="item-unit">27 → 14 บ่อ · 7,100 บาท/บ่อ</div>
-              </td>
-              <td style="color:var(--muted); font-size:11px">27<br><span style="font-size:10px">บ่อ</span></td>
-              <td style="font-weight:700; color:#C62828">14<br><span style="font-size:10px; font-weight:400; color:var(--muted)">บ่อ</span></td>
-              <td><span class="chip chip-down">▼ -92,300</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="item-name">🔴 ท่อ คสล. ขนาด 0.60 ม.</div>
-                <div class="item-unit">300 → 255.26 ม. · 590 บาท/ม.</div>
-              </td>
-              <td style="color:var(--muted); font-size:11px">300<br><span style="font-size:10px">ม.</span></td>
-              <td style="font-weight:700; color:#C62828">255.26<br><span style="font-size:10px; font-weight:400; color:var(--muted)">ม.</span></td>
-              <td><span class="chip chip-down">▼ -26,397</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="item-name">🔴 ท่อ คสล. ขนาด 1.00 ม.</div>
-                <div class="item-unit">230 → 115.77 ม. · 1,560 บาท/ม.</div>
-              </td>
-              <td style="color:var(--muted); font-size:11px">230<br><span style="font-size:10px">ม.</span></td>
-              <td style="font-weight:700; color:#C62828">115.77<br><span style="font-size:10px; font-weight:400; color:var(--muted)">ม.</span></td>
-              <td><span class="chip chip-down">▼ -178,199</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="item-name">🔴 รางระบายน้ำตัวยู 0.60 ม.</div>
-                <div class="item-unit">530 → 196.51 ม. · 700 บาท/ม.</div>
-              </td>
-              <td style="color:var(--muted); font-size:11px">530<br><span style="font-size:10px">ม.</span></td>
-              <td style="font-weight:700; color:#C62828">196.51<br><span style="font-size:10px; font-weight:400; color:var(--muted)">ม.</span></td>
-              <td><span class="chip chip-down">▼ -233,443</span></td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Sub totals -->
-        <div style="margin-top:14px; border-top:2px solid var(--border); padding-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <div style="background:#E8F5E9; border-radius:10px; padding:10px 14px;">
-            <div style="font-size:10px; font-weight:700; color:#2E7D32; text-transform:uppercase; letter-spacing:0.3px; margin-bottom:4px">รวมงานเพิ่ม</div>
-            <div style="font-size:16px; font-weight:800; color:#1B5E20">+3,330,758 บาท</div>
-            <div style="font-size:10px; color:#4CAF50; margin-top:2px">พื้น คสล. + บ่อพัก 0.60 ม.</div>
-          </div>
-          <div style="background:#FFEBEE; border-radius:10px; padding:10px 14px;">
-            <div style="font-size:10px; font-weight:700; color:#C62828; text-transform:uppercase; letter-spacing:0.3px; margin-bottom:4px">รวมงานลด</div>
-            <div style="font-size:16px; font-weight:800; color:#B71C1C">-530,339 บาท</div>
-            <div style="font-size:10px; color:#EF5350; margin-top:2px">ท่อ + บ่อพัก 1.00 ม. + ราง</div>
-          </div>
+  <!-- หมวด A: ท่อระบายน้ำ -->
+  <div class="L2-card">
+    <div class="L2-head">
+      <div class="L2-head-left">
+        <div class="L2-icon" style="background:#FFEBEE">🌊</div>
+        <div>
+          <div class="L2-title">หมวดผังบริเวณ · งานท่อระบายน้ำ</div>
+          <div class="L2-desc">งานเพิ่ม-ลด ตาม BOQ · คูณ Factor F 1.2067</div>
         </div>
       </div>
-    </div>
-
-    <!-- RIGHT: Visual comparison -->
-    <div style="display:flex; flex-direction:column; gap:20px;">
-
-      <!-- Bar comparisons -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">
-            <div class="icon" style="background:#FFF8E1">📊</div>
-            เปรียบเทียบ BOQ vs งานจริง
-          </div>
-        </div>
-        <div class="card-body">
-
-          <!-- พื้น คสล. -->
-          <div class="compare-item">
-            <div class="compare-label">
-              <div class="compare-name">🏗️ พื้น คสล. จุดจอดเฮลิคอปเตอร์</div>
-              <div class="compare-nums">
-                <div>BOQ: 5,160 ตร.ม.</div>
-                <strong>จริง: 9,580 ตร.ม.</strong>
-              </div>
-            </div>
-            <div class="bar-track">
-              <div class="bar-boq" style="width:54%"></div>
-              <div class="bar-real" style="width:100%; background:linear-gradient(90deg,#1E88E5,#42A5F5)"></div>
-            </div>
-            <div class="bar-legend">
-              <span><span class="dot" style="background:#90CAF9"></span>BOQ 54%</span>
-              <span><span class="dot" style="background:#1E88E5"></span>จริง 100% (+85.7%)</span>
-            </div>
-          </div>
-
-          <!-- ท่อ 0.60 -->
-          <div class="compare-item">
-            <div class="compare-label">
-              <div class="compare-name">🔵 ท่อ + ราง ขนาด 0.60 ม.</div>
-              <div class="compare-nums">
-                <div>BOQ: 830 ม.</div>
-                <strong>จริง: 451.77 ม.</strong>
-              </div>
-            </div>
-            <div class="bar-track">
-              <div class="bar-boq" style="width:100%"></div>
-              <div class="bar-real" style="width:54%; background:linear-gradient(90deg,#E53935,#EF5350)"></div>
-            </div>
-            <div class="bar-legend">
-              <span><span class="dot" style="background:#90CAF9"></span>BOQ 100%</span>
-              <span><span class="dot" style="background:#E53935"></span>จริง 54% (-45.6%)</span>
-            </div>
-          </div>
-
-          <!-- ท่อ 1.00 -->
-          <div class="compare-item">
-            <div class="compare-label">
-              <div class="compare-name">🔵 ท่อ + บ่อ ขนาด 1.00 ม.</div>
-              <div class="compare-nums">
-                <div>BOQ: 230 ม. / 27 บ่อ</div>
-                <strong>จริง: 115.77 ม. / 14 บ่อ</strong>
-              </div>
-            </div>
-            <div class="bar-track">
-              <div class="bar-boq" style="width:100%"></div>
-              <div class="bar-real" style="width:50%; background:linear-gradient(90deg,#E53935,#EF5350)"></div>
-            </div>
-            <div class="bar-legend">
-              <span><span class="dot" style="background:#90CAF9"></span>BOQ 100%</span>
-              <span><span class="dot" style="background:#E53935"></span>จริง 50% (-50.1%)</span>
-            </div>
-          </div>
-        </div>
+      <div>
+        <div class="L2-sum-val" style="color:#C62828">-560,727</div>
+        <div class="L2-sum-sub">บาท (หลัง F) · ลดสุทธิ</div>
       </div>
-
-      <!-- Flow: ราคา -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">
-            <div class="icon" style="background:#E8F5E9">💰</div>
-            การเปลี่ยนแปลงราคากลาง
-          </div>
+    </div>
+    <div class="L2-body">
+      <div class="L3-item">
+        <div class="L3-top">
+          <div class="L3-name">บ่อพัก คสล. ขนาด 0.60 ม.</div>
+          <div class="L3-nums">BOQ 21 บ่อ → จริง <strong>35 บ่อ</strong></div>
         </div>
-        <div class="flow">
-          <div class="flow-box blue">
-            <div class="fb-label">ราคาเดิม</div>
-            <div class="fb-val">9.92</div>
-            <div class="fb-sub">ล้านบาท</div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-box green">
-            <div class="fb-label">งานเพิ่ม</div>
-            <div class="fb-val">+3.33</div>
-            <div class="fb-sub">ล้านบาท</div>
-          </div>
-          <div class="flow-arrow">−</div>
-          <div class="flow-box red">
-            <div class="fb-label">งานลด</div>
-            <div class="fb-val">-0.53</div>
-            <div class="fb-sub">ล้านบาท</div>
-          </div>
-          <div class="flow-arrow">×F</div>
-          <div class="flow-box amber">
-            <div class="fb-label">ราคาใหม่</div>
-            <div class="fb-val">13.30</div>
-            <div class="fb-sub">ล้านบาท</div>
-          </div>
+        <div class="bar-track">
+          <div class="bar-old" style="width:60%"></div>
+          <div class="bar-new" style="width:100%;background:#43A047"></div>
         </div>
-        <div style="padding:0 22px 16px; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <div style="background:#F0F4F8; border-radius:8px; padding:8px 12px; text-align:center;">
-            <div style="font-size:10px; color:var(--muted); font-weight:600; margin-bottom:3px">สาเหตุหลักที่งานเพิ่ม</div>
-            <div style="font-size:12px; font-weight:700; color:#1565C0">พื้น คสล. +4,420 ตร.ม.</div>
-            <div style="font-size:10px; color:var(--muted)">แบบ Shop Drawing ยืนยัน</div>
-          </div>
-          <div style="background:#F0F4F8; border-radius:8px; padding:8px 12px; text-align:center;">
-            <div style="font-size:10px; color:var(--muted); font-weight:600; margin-bottom:3px">สาเหตุหลักที่งานลด</div>
-            <div style="font-size:12px; font-weight:700; color:#C62828">ออกแบบท่อใหม่ลดขนาด</div>
-            <div style="font-size:10px; color:var(--muted)">เปลี่ยน layout ระบบระบายน้ำ</div>
-          </div>
-        </div>
+        <div class="L3-diff up">▲ +65,660 บาท</div>
       </div>
-
-    </div>
-  </div>
-
-  <!-- PROJECT TOTAL -->
-  <div class="total-section">
-    <div class="total-box">
-      <div class="tb-label">ราคากลางเดิม (ทั้งโครงการ)</div>
-      <div class="tb-val">89.46</div>
-      <div class="tb-sub">ล้านบาท</div>
-      <div style="font-size:10px; color:rgba(255,255,255,0.45); margin-top:4px">หมวด ก. 84.04 + หมวด ข. 5.42</div>
-    </div>
-    <div class="total-arrow">+</div>
-    <div class="total-box">
-      <div class="tb-label">งานเพิ่มสุทธิ (หมวดผังบริเวณ)</div>
-      <div class="tb-val" style="color:#81C784">+3.38</div>
-      <div class="tb-sub">ล้านบาท (หลัง Factor F)</div>
-      <div style="font-size:10px; color:rgba(255,255,255,0.45); margin-top:4px">ยังไม่รวมหมวดอื่นๆ</div>
-    </div>
-    <div class="total-divider"></div>
-    <div class="total-box highlight">
-      <div class="tb-label">⭐ ราคากลางใหม่ (ทั้งโครงการ)</div>
-      <div class="tb-val">92.84</div>
-      <div class="tb-sub">ล้านบาท (ปัดเศษพัน)</div>
-      <div class="total-badge">▲ +3.38 ล้าน (+3.78%)</div>
-    </div>
-    <div class="total-divider"></div>
-    <div class="total-box">
-      <div class="tb-label">แยกหมวดงาน</div>
-      <div style="margin-top:6px; position:relative; z-index:1;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;">
-          <span style="font-size:11px; color:rgba(255,255,255,0.6);">ก. งานก่อสร้าง</span>
-          <span style="font-size:13px; font-weight:700; color:#fff;">87.42 ล้าน</span>
+      <div class="L3-item">
+        <div class="L3-top">
+          <div class="L3-name">บ่อพัก คสล. ขนาด 1.00 ม.</div>
+          <div class="L3-nums">BOQ 27 บ่อ → จริง <strong>14 บ่อ</strong></div>
         </div>
-        <div style="height:5px; background:rgba(255,255,255,0.1); border-radius:100px; margin-bottom:10px; overflow:hidden;">
-          <div style="width:94.2%; height:100%; background:linear-gradient(90deg,#42A5F5,#1E88E5); border-radius:100px;"></div>
+        <div class="bar-track">
+          <div class="bar-old" style="width:100%"></div>
+          <div class="bar-new" style="width:52%;background:#E53935"></div>
         </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;">
-          <span style="font-size:11px; color:rgba(255,255,255,0.6);">ข. ครุภัณฑ์</span>
-          <span style="font-size:13px; font-weight:700; color:#fff;">5.42 ล้าน</span>
+        <div class="L3-diff down">▼ -92,300 บาท</div>
+      </div>
+      <div class="L3-item">
+        <div class="L3-top">
+          <div class="L3-name">ท่อ คสล. ขนาด 0.60 ม.</div>
+          <div class="L3-nums">BOQ 300 → จริง <strong>255.26 ม.</strong></div>
         </div>
-        <div style="height:5px; background:rgba(255,255,255,0.1); border-radius:100px; overflow:hidden;">
-          <div style="width:5.8%; height:100%; background:linear-gradient(90deg,#FFB74D,#FFA726); border-radius:100px;"></div>
+        <div class="bar-track">
+          <div class="bar-old" style="width:100%"></div>
+          <div class="bar-new" style="width:85%;background:#E53935"></div>
         </div>
+        <div class="L3-diff down">▼ -26,397 บาท</div>
+      </div>
+      <div class="L3-item">
+        <div class="L3-top">
+          <div class="L3-name">ท่อ คสล. ขนาด 1.00 ม.</div>
+          <div class="L3-nums">BOQ 230 → จริง <strong>115.77 ม.</strong></div>
+        </div>
+        <div class="bar-track">
+          <div class="bar-old" style="width:100%"></div>
+          <div class="bar-new" style="width:50%;background:#E53935"></div>
+        </div>
+        <div class="L3-diff down">▼ -178,199 บาท</div>
+      </div>
+      <div class="L3-item">
+        <div class="L3-top">
+          <div class="L3-name">รางระบายน้ำตัวยู 0.60 ม.</div>
+          <div class="L3-nums">BOQ 530 → จริง <strong>196.51 ม.</strong></div>
+        </div>
+        <div class="bar-track">
+          <div class="bar-old" style="width:100%"></div>
+          <div class="bar-new" style="width:37%;background:#E53935"></div>
+        </div>
+        <div class="L3-diff down">▼ -233,443 บาท</div>
+      </div>
+      <div class="subtotal">
+        <span class="subtotal-label">รวมก่อน F</span>
+        <span class="subtotal-val" style="color:#C62828">-464,678 บาท</span>
+      </div>
+      <div class="subtotal" style="margin-top:6px;background:#FFEBEE;">
+        <span class="subtotal-label">รวมหลัง F (×1.2067)</span>
+        <span class="subtotal-val" style="color:#B71C1C">-560,727 บาท</span>
       </div>
     </div>
   </div>
 
-  <!-- BOTTOM STRIP -->
-  <div class="bottom-strip">
-    <div class="strip-note">
-      <strong>หมายเหตุ:</strong> ข้อมูลนี้ครอบคลุมเฉพาะ <strong>หมวดงานผังบริเวณ</strong> (2 รายการที่มีข้อมูลจริงครบถ้วน)
-      ได้แก่ พื้น คสล. และงานท่อระบายน้ำ · งานหมวดอื่นๆ ในโครงการยังอยู่ระหว่างรวบรวมข้อมูล ·
-      ตัวเลขหลัง Factor F คือราคาที่ใช้อ้างอิงในสัญญาจ้าง
+  <!-- หมวด B: โรงเก็บชั่วคราว 1 -->
+  <div class="L2-card">
+    <div class="L2-head">
+      <div class="L2-head-left">
+        <div class="L2-icon" style="background:#EDE7F6">🏠</div>
+        <div>
+          <div class="L2-title">โรงเก็บอากาศยานชั่วคราว หมายเลข 1</div>
+          <div class="L2-desc">22×54 ม. · แบบมีปิดโครงหลังคา · คูณ Factor F 1.2067</div>
+        </div>
+      </div>
+      <div>
+        <div class="L2-sum-val" style="color:#4527A0">+1,845,081</div>
+        <div class="L2-sum-sub">บาท (หลัง F) · เพิ่มสุทธิ</div>
+      </div>
     </div>
-    <div class="strip-stamp">
-      <div class="stamp-label">ข้อมูล ณ วันที่</div>
-      <div class="stamp-val">11 มีนาคม 2569</div>
+    <div class="L2-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+        <div style="background:var(--sky);border-radius:10px;padding:10px 14px;text-align:center;">
+          <div style="font-size:9.5px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px">ก่อน Factor F</div>
+          <div style="font-size:20px;font-weight:800;color:var(--blue);line-height:1">6.50 ล้าน</div>
+        </div>
+        <div style="background:var(--pbg);border-radius:10px;padding:10px 14px;text-align:center;">
+          <div style="font-size:9.5px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px">หลัง Factor F</div>
+          <div style="font-size:20px;font-weight:800;color:var(--purple);line-height:1">7.85 ล้าน</div>
+        </div>
+      </div>
+      <table class="htable">
+        <thead>
+          <tr>
+            <th>หมวดงาน</th>
+            <th>คู่สัญญา (บาท)</th>
+            <th>เสนอใหม่ (บาท)</th>
+            <th>ส่วนต่าง</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>งานเตรียมการ</td><td style="color:var(--muted)">—</td><td>244,381</td><td><span class="chip up">▲ +244,381</span></td></tr>
+          <tr><td>งานโครงสร้าง ค.ส.ล.</td><td>399,729</td><td>1,253,426</td><td><span class="chip up">▲ +853,697</span></td></tr>
+          <tr><td>งานโครงสร้างเหล็ก</td><td>3,784,762</td><td>4,329,460</td><td><span class="chip up">▲ +544,698</span></td></tr>
+          <tr><td>งานหลังคา / Siding</td><td>1,646,828</td><td>1,595,137</td><td><span class="chip down">▼ -51,691</span></td></tr>
+          <tr><td>งานระบบไฟฟ้า</td><td>169,108</td><td>423,105</td><td><span class="chip up">▲ +253,997</span></td></tr>
+          <tr><td>รวมทั้งสิ้น</td><td>6,000,427</td><td>7,845,508</td><td><span class="chip up">▲ +1,845,081</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
+</div>
+
+<!-- LEVEL 4: งานนอก BOQ -->
+<div class="L4-section">
+  <div class="L4-head">
+    <div class="L4-head-left">
+      <div class="L4-icon">📐</div>
+      <div>
+        <div class="L4-head-title">งานนอกเหนือ BOQ · แต่มีในแบบก่อสร้าง (Shop Drawing)</div>
+        <div class="L4-head-sub">งานที่ต้องดำเนินการตามแบบ · ไม่นับรวมงานเพิ่ม-ลด · ไม่คูณ Factor F · ต้องขออนุมัติแยก</div>
+      </div>
+    </div>
+    <div class="L4-tag">⚠️ ไม่คูณ Factor F · ไม่รวมในยอดโครงการ</div>
+  </div>
+  <div class="L4-body">
+    <div class="L4-row">
+      <div>
+        <div class="L4-item-name">🏗️ พื้น คสล. บริเวณจุดจอดเฮลิคอปเตอร์ 45×90 ม.</div>
+        <div class="L4-item-sub">
+          BOQ เดิมระบุ 5,160 ตร.ม. · Shop Drawing กำหนดพื้นที่จริง 9,580 ตร.ม.<br>
+          ส่วนต่างที่ต้องทำเพิ่ม +4,420 ตร.ม. · ยืนยันจาก Shop Drawing ที่ได้รับอนุมัติ 24 ก.พ. 2569
+        </div>
+      </div>
+      <div class="L4-qty-box">
+        <div class="L4-qty-val">4,420</div>
+        <div class="L4-qty-unit">ตร.ม.</div>
+      </div>
+      <div class="L4-unit-box">
+        <div class="L4-unit-val">738.71 บาท/ตร.ม.</div>
+        <div class="L4-unit-sub">ราคาต่อหน่วย</div>
+      </div>
+      <div class="L4-total-box">
+        <div class="L4-total-val">3,265,098 บาท</div>
+        <div class="L4-total-sub">มูลค่ารวม (ไม่คูณ F)</div>
+      </div>
+    </div>
+    <div class="L4-note">
+      ⚠️ <strong>หมายเหตุสำคัญ:</strong> รายการนี้ปรากฏในแบบก่อสร้างที่ได้รับอนุมัติ แต่ไม่ถูกรวมไว้ใน BOQ เดิม
+      จึง<strong>ไม่นำมาคำนวณเป็นงานเพิ่ม-ลด และไม่คูณ Factor F</strong>
+      มูลค่า <strong>3,265,098 บาท</strong> ต้องนำเสนอแยกต่างหากเพื่อขออนุมัติดำเนินการตามขั้นตอน
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-note">
+    <strong>หมายเหตุ:</strong> ยอดรวม 90.74 ล้านบาท ครอบคลุมเฉพาะ 2 หมวดที่มีข้อมูลครบ (ผังบริเวณ + โรงเก็บชั่วคราว 1) ·
+    งานนอก BOQ มูลค่า 3.27 ล้านบาท <strong>ไม่รวมในยอดโครงการ</strong> และต้องขออนุมัติแยก ·
+    หมวดอื่นๆ ยังรอข้อมูลเพิ่มเติม
+  </div>
+  <div>
+    <div class="fd-label">ข้อมูล ณ วันที่</div>
+    <div class="fd-val">11 มีนาคม 2569</div>
+  </div>
+</div>
 
 </div>
 </body>
